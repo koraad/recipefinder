@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color:  #5e503f;
+    --secondary-color: green;
+    --tertiary-color: #b09a47;
+    --bg-color-light:  #a9927d;
+    --bg-color-dark: #5e503f;
+    --color-contrast: #f2f4f3;
+    --color-normal: black;
+    --color-fries: black;
+    --transition-basic: 0.5s ease-in-out;
+}
+
+* {
+    font-family: 'Roboto', serif;
+    letter-spacing: 2px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style-type: none;
+    color: var(--bg-color-dark);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-normal);
+}
+
+h1 {
+    color:var(--secondary-color);
+    font-size: 70px;
+    font-weight: lighter;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-size: 70px;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 20px;
+    font-size: 15px;
+    width: 100%;
+    color: rgba(136,136,136, 0.8);
+    font-weight: 300;
+}
+
+span {
+    color: var(--color-contrast);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+
+/* menu section */
+
+.menu {
+    background-color: var(--color-normal);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 60px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+}
+
+.search-box {
+    margin-top: 50px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 30px;
+}
+.search-box input{
+    padding: 15px 20px;
+    width: 500px;
+    background-color: transparent;
+    color: white;
+}
+.search-box input::placeholder{
+    color: rgba(136,136,136, 0.8);
+    font-size: 15px;
+}
+
+.search-box button {
+    padding: 15px 20px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-size: 18px;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.menu-container .card {
+    width: 350px;
+    height: auto;
+    position: relative;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 3px 0.5px green;
+    background-color: transparent;
+    transition: 0.5s ease-in-out;
+}
+
+.menu-container .card .img-bg{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+
+}
+.menu-container .card .img-bg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.5s ease-in-out;
+
+
+}
+.menu-container .card:hover .img-bg img {
+    transform: scale(1.2);
+    transition: 0.5s ease-in-out;
+}
+
+
+.menu-container .card .content-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.menu-container .card h3 {
+    font-family: 'Antic Didone', serif;
+    color: var(--color-contrast);
+    font-size: 18px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+
+.card-btn {
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: var(--color-contrast);
+    font-weight: 200;
+    letter-spacing: 1px;
+    line-height: 5px;
+    margin-top: 5px;
+    padding: 18px 30px;
+    text-transform: uppercase;
+    transition: 0.5s ease-in-out;
+    width: 220px;
+    height: auto;
+    font-size: 12px;
+}
+
+.card-btn:hover {
+    background-color: var(--color-contrast);
+    color: var(--color-normal);
+    transition: 0.5s ease-in-out;
+    letter-spacing: 3px;
+}
+
+
+.recipe-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-normal);
+    
+}
+
+.recipe-container img{
+    width: 50%;
+    height: 100%;
+    
+}
+.recipe-container .content{
+    text-align: left;
+    overflow-y: auto;
+    height: 100%;
+    width: 50%;
+    padding-right: 5px;
+    background-color: var(--color-normal);
+    padding: 40px;
+}
+.recipe-container p{
+    max-width: 500px;
+    
+}
+.recipe-container .content h3{
+    font-size: 60px;
+    font-weight: 200;
+    color: white;
+    max-width: 600px;
+}
+.recipe-container .content h4{
+   text-transform: uppercase;
+   margin-bottom: 20px;
+   color: rgba(136,136,136, 0.8);
+    
+}
+.recipe-container .content span{
+    margin: 20px 0;
+    background-color: var(--secondary-color);
+    display: block;
+    max-width: 110px;
+    padding: 10px 20px;
+    color: black;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#recipe-close {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    font-size: 40px;
+    cursor: pointer;
+    color: var(--secondary-color);
+    transition: 0.5s ease-in-out;
+}
+#recipe-close:hover {
+    transform: scale(0.8);
+}
+
+
+@media screen and (max-width: 770px){
+    .recipe-container {
+        flex-direction: column;
+        overflow-y: auto;
+        
+    }
+
+    .recipe-container img{
+        width: 100%;
+        height: 50vh;
+        position: relative;
+    }
+    .recipe-container .content{
+        text-align: left;
+        overflow: scroll;
+        height: auto;
+        width: 100%;
+        padding-right: 5px;
+        padding: 40px;
+    }
+    
+    .search-box input{
+
+        width: 300px;
+
+    }
+     
+}
+@media screen and (max-width: 550px){
+    
+    .recipe-container .content{
+        padding: 20px;
+ 
+    }
+    .recipe-container .content h3{
+        font-size: 40px;
+ 
+    }
+
+    .search-box input{
+
+        width: 200px;
+
+    }
+    
+}
